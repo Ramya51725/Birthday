@@ -217,6 +217,42 @@ animation:flutter 2s infinite alternate;
 50%{transform:rotate(15deg);}
 100%{transform:rotate(-15deg);}
 }
+.story-images{
+display:flex;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+/* SNOW FALL */
+.snowflake{
+position:fixed;
+top:-10px;
+color:white;
+font-size:18px;
+pointer-events:none;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+.story-images img{
+width:300px;
+height:400px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 20px gold;
+transition:0.5s;
+}
+
+.story-images img:hover{
+transform:scale(1.1);
+box-shadow:0 0 30px white;
+}
 
 .particle{position:fixed;pointer-events:none;}
 </style>
@@ -242,9 +278,14 @@ animation:flutter 2s infinite alternate;
 <h1 class="big-title">🎉 HAPPY BIRTHDAY ANISHA 🎉</h1>
 <p id="typingText"></p>
 </section>
-
 <section id="story" class="section story">
 <h1 class="big-title">Anisha's Journey 🌟</h1>
+
+<div class="story-images">
+    <img src="./assets/anisha.jpeg">
+    <img src="./assets/anisha2.jpeg">
+</div>
+
 </section>
 
 <section id="wishes" class="section wishes">
@@ -366,6 +407,22 @@ if(playing){music.pause();btn.innerHTML="🎵";}
 else{music.play();btn.innerHTML="🔊";}
 playing=!playing;
 }
+/* Snow Falling Effect */
+setInterval(()=>{
+let snow=document.createElement("div");
+snow.innerHTML="❄";
+snow.className="snowflake";
+snow.style.left=Math.random()*100+"vw";
+snow.style.animationDuration=(Math.random()*3+2)+"s";
+snow.style.opacity=Math.random();
+document.body.appendChild(snow);
+
+setTimeout(()=>{
+snow.remove();
+},5000);
+
+},200);
+
 </script>
 
 </body>
