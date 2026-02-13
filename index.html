@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Anisha 🎉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+nav a:hover{color:gold;}
+
+.music-btn{
+    background:gold;
+    border:none;
+    padding:8px 15px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* SECTIONS */
+.section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+/* 🎉 PORTRAIT BACKGROUND IMAGE ADDED */
+.home{
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.story{background:linear-gradient(135deg,#2b1055,#7597de);}
+.wishes{background:linear-gradient(135deg,#ff416c,#ff4b2b);}
+.celebrate{background:linear-gradient(135deg,#141e30,#243b55);}
+
+.big-title{
+    font-size:50px;
+    margin-bottom:20px;
+    animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+    from{text-shadow:0 0 10px white;}
+    to{text-shadow:0 0 30px gold;}
+}
+
+.btn{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:black;
+    font-weight:bold;
+    margin:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn:hover{transform:scale(1.1);}
+
+#wishOutput{
+    font-size:26px;
+    min-height:70px;
+    margin:20px;
+}
+
+/* 🎂 REAL CAKE DESIGN */
+.cake-container{
+    position:relative;
+    width:220px;
+    height:200px;
+    margin:30px auto;
+    cursor:pointer;
+}
+.cake-base{
+    position:absolute;
+    bottom:0;
+    width:220px;
+    height:110px;
+    background:#ff8fab;
+    border-radius:10px;
+}
+.cake-top{
+    position:absolute;
+    bottom:90px;
+    left:35px;
+    width:150px;
+    height:70px;
+    background:#ffc2d1;
+    border-radius:10px;
+}
+.slice{
+    position:absolute;
+    bottom:0;
+    left:110px;
+    width:6px;
+    height:170px;
+    background:white;
+    transform:scaleY(0);
+    transform-origin:bottom;
+    transition:1s;
+}
+.knife{
+    position:absolute;
+    top:-40px;
+    left:90px;
+    width:40px;
+    height:90px;
+    background:silver;
+    border-radius:5px;
+    transform:rotate(-45deg);
+    transition:1s;
+}
+
+#finalMessage{
+    font-size:30px;
+    margin-top:30px;
+}
+
+/* SNOW */
+.snowflake{
+    position:fixed;
+    top:-10px;
+    font-size:16px;
+    pointer-events:none;
+    animation:fall linear infinite;
+}
+@keyframes fall{
+    to{transform:translateY(110vh);}
+}
+
+/* BALLOONS */
+.balloon{
+    position:fixed;
+    bottom:-100px;
+    font-size:60px;
+    animation:floatUp 12s linear infinite;
+}
+@keyframes floatUp{
+    from{transform:translateY(0);}
+    to{transform:translateY(-130vh);}
+}
+
+/* PARTICLES */
+.particle{
+    position:fixed;
+    pointer-events:none;
+}
+
+/* MOUSE TRAIL */
+.trail{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    pointer-events:none;
+}
+</style>
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9baf46.mp3?filename=happy-birthday-to-you-piano-version-114089.mp3" type="audio/mpeg">
+</audio>
+
+
+<nav>
+    <div>👑 Queen Anisha 👑</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#wishes">Wishes</a></li>
+        <li><a href="#celebrate">Celebrate</a></li>
+    </ul>
+    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+</nav>
+
+<section id="home" class="section home">
+    <h1 class="big-title">🎉 HAPPY BIRTHDAY ANISHA 🎉</h1>
+    <p id="typingText"></p>
+    <button class="btn" onclick="scrollToSection('story')">Begin Journey 🚀</button>
+</section>
+
+<section id="story" class="section story">
+    <h1 class="big-title">Anisha's Journey 🌟</h1>
+</section>
+
+<section id="wishes" class="section wishes">
+    <h1 class="big-title">Blessings For Anisha 💕</h1>
+    <div id="wishOutput">Click below 🎁</div>
+    <button class="btn" onclick="generateWish()">Reveal Wish</button>
+</section>
+
+<section id="celebrate" class="section celebrate">
+    <h1 class="big-title">🎂 Cake Cutting Time 🎂</h1>
+
+    <div class="cake-container" onclick="cutCake()">
+        <div class="cake-base"></div>
+        <div class="cake-top"></div>
+        <div class="slice" id="slice"></div>
+        <div class="knife" id="knife"></div>
+    </div>
+
+    <div id="finalMessage"></div>
+</section>
+
+<script>
+
+/* Smooth Scroll */
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+/* Typing */
+let text="Anisha, today is your magical day ✨";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typingText").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,50);
+}
+}
+type();
+
+/* Wishes */
+let wishes=[
+"Anisha, this year will be legendary 👑",
+"Anisha, happiness surrounds you 💖",
+"Anisha, dreams come true 🌟",
+"Anisha, success is yours 🚀"
+];
+function generateWish(){
+let wish=wishes[Math.floor(Math.random()*wishes.length)];
+document.getElementById("wishOutput").innerHTML=wish;
+}
+
+/* REAL CAKE CUT */
+function cutCake(){
+document.getElementById("slice").style.transform="scaleY(1)";
+document.getElementById("knife").style.transform="rotate(0deg) translateY(100px)";
+document.getElementById("finalMessage").innerHTML="🎉 ANISHA CUT THE CAKE 🎉";
+
+for(let i=0;i<200;i++){
+let spark=document.createElement("div");
+spark.innerHTML="✨";
+spark.className="particle";
+spark.style.left=Math.random()*100+"vw";
+spark.style.top=Math.random()*100+"vh";
+document.body.appendChild(spark);
+setTimeout(()=>spark.remove(),2000);
+}
+}
+
+/* Balloons */
+setInterval(()=>{
+let balloon=document.createElement("div");
+balloon.innerHTML="🎈";
+balloon.className="balloon";
+balloon.style.left=Math.random()*100+"vw";
+document.body.appendChild(balloon);
+setTimeout(()=>balloon.remove(),12000);
+},2000);
+
+/* Snow */
+setInterval(()=>{
+let snow=document.createElement("div");
+snow.innerHTML="❄";
+snow.className="snowflake";
+snow.style.left=Math.random()*100+"vw";
+snow.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(snow);
+setTimeout(()=>snow.remove(),5000);
+},200);
+
+/* MUSIC FIX */
+let music = document.getElementById("bgMusic");
+let musicBtn = document.querySelector(".music-btn");
+let isPlaying = false;
+
+/* Start Music Function */
+function startMusic(){
+    music.play().then(()=>{
+        isPlaying = true;
+        musicBtn.innerHTML = "🔊";
+    }).catch((error)=>{
+        console.log("Autoplay blocked");
+    });
+}
+
+/* Toggle Button */
+function toggleMusic(){
+    if(isPlaying){
+        music.pause();
+        isPlaying = false;
+        musicBtn.innerHTML = "🎵";
+    } else {
+        startMusic();
+    }
+}
+
+/* Start music on first user interaction */
+document.addEventListener("click", function(){
+    if(!isPlaying){
+        startMusic();
+    }
+}, { once:true });
+
+
+/* Mouse Trail */
+document.addEventListener("mousemove",function(e){
+let trail=document.createElement("div");
+trail.className="trail";
+trail.style.left=e.pageX+"px";
+trail.style.top=e.pageY+"px";
+document.body.appendChild(trail);
+setTimeout(()=>trail.remove(),400);
+});
+
+</script>
+
+</body>
+</html>
