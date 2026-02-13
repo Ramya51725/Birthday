@@ -9,246 +9,272 @@
 html{scroll-behavior:smooth;}
 
 body{
-    font-family:'Segoe UI',sans-serif;
-    overflow-x:hidden;
-    color:white;
+font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
+color:white;
+}
+/* STORY */
+/* STORY */
+.story{
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("./assets/anisha.jpeg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+/* REMOVE background-attachment: fixed; */
 }
 
 /* NAV */
 nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:20px;
-}
-nav a{
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-}
+nav ul{list-style:none;display:flex;gap:20px;}
+nav a{text-decoration:none;color:white;font-weight:bold;}
 nav a:hover{color:gold;}
 
 .music-btn{
-    background:gold;
-    border:none;
-    padding:8px 15px;
-    border-radius:20px;
-    cursor:pointer;
+background:gold;border:none;padding:8px 15px;
+border-radius:20px;cursor:pointer;
 }
 
 /* SECTIONS */
 .section{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-/* 🎉 PORTRAIT BACKGROUND IMAGE ADDED */
+/* HOME */
 .home{
-    background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200&auto=format&fit=crop");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=1200&q=80");
+background-size:contain;
+background-position:center;
+background-repeat:no-repeat;
+background-color:black;
 }
 
-.story{background:linear-gradient(135deg,#2b1055,#7597de);}
+/* STORY */
+/* .story{
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=80");
+background-size:90%;
+background-position:center;
+background-repeat:no-repeat;
+background-color:black; */
+/* } */
+
 .wishes{background:linear-gradient(135deg,#ff416c,#ff4b2b);}
 .celebrate{background:linear-gradient(135deg,#141e30,#243b55);}
 
 .big-title{
-    font-size:50px;
-    margin-bottom:20px;
-    animation:glow 2s infinite alternate;
+font-size:50px;
+margin-bottom:20px;
+animation:glow 2s infinite alternate;
 }
 @keyframes glow{
-    from{text-shadow:0 0 10px white;}
-    to{text-shadow:0 0 30px gold;}
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 30px gold;}
 }
 
 .btn{
-    padding:15px 30px;
-    border:none;
-    border-radius:30px;
-    background:white;
-    color:black;
-    font-weight:bold;
-    margin:15px;
-    cursor:pointer;
-    transition:0.3s;
+padding:15px 30px;border:none;border-radius:30px;
+background:white;color:black;font-weight:bold;
+margin:15px;cursor:pointer;transition:0.3s;
 }
 .btn:hover{transform:scale(1.1);}
 
-#wishOutput{
-    font-size:26px;
-    min-height:70px;
-    margin:20px;
+#wishOutput{font-size:26px;min-height:70px;margin:20px;}
+
+/* GIFT BOX */
+.gift-box{
+position:relative;width:180px;height:180px;
+margin-top:30px;cursor:pointer;display:none;
+}
+.gift-body{
+width:180px;height:120px;
+background:linear-gradient(135deg,#6a0dad,#9b59b6);
+position:absolute;bottom:0;border-radius:15px;
+box-shadow:0 0 20px gold;
+}
+.gift-lid{
+width:180px;height:50px;
+background:linear-gradient(135deg,#4b0082,#800080);
+position:absolute;top:0;border-radius:15px;
+transition:1s;
+}
+.gift-body::before{
+content:"";position:absolute;width:20px;height:120px;
+background:gold;left:80px;
+}
+.gift-lid::before{
+content:"";position:absolute;width:100%;height:15px;
+background:gold;top:15px;
 }
 
-/* 🎂 REAL CAKE DESIGN */
+/* LETTER */
+.letter{
+position:absolute;width:220px;height:120px;
+background:white;color:#ff2e63;
+display:flex;justify-content:center;align-items:center;
+text-align:center;font-weight:bold;
+border-radius:10px;
+top:30px;left:-20px;
+transform:translateY(80px) scale(0);
+transition:1s;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+/* CAKE SECTION */
+.celebrate{
+background:linear-gradient(135deg,#141e30,#243b55);
+}
+
+/* CAKE DESIGN */
 .cake-container{
-    position:relative;
-    width:220px;
-    height:200px;
-    margin:30px auto;
-    cursor:pointer;
+position:relative;
+width:220px;
+height:200px;
+margin:30px auto;
+cursor:pointer;
 }
 .cake-base{
-    position:absolute;
-    bottom:0;
-    width:220px;
-    height:110px;
-    background:#ff8fab;
-    border-radius:10px;
+position:absolute;
+bottom:0;
+width:220px;
+height:110px;
+background:#ff8fab;
+border-radius:10px;
 }
 .cake-top{
-    position:absolute;
-    bottom:90px;
-    left:35px;
-    width:150px;
-    height:70px;
-    background:#ffc2d1;
-    border-radius:10px;
+position:absolute;
+bottom:90px;
+left:35px;
+width:150px;
+height:70px;
+background:#ffc2d1;
+border-radius:10px;
 }
 .slice{
-    position:absolute;
-    bottom:0;
-    left:110px;
-    width:6px;
-    height:170px;
-    background:white;
-    transform:scaleY(0);
-    transform-origin:bottom;
-    transition:1s;
+position:absolute;
+bottom:0;
+left:110px;
+width:6px;
+height:170px;
+background:white;
+transform:scaleY(0);
+transform-origin:bottom;
+transition:1s;
 }
 .knife{
-    position:absolute;
-    top:-40px;
-    left:90px;
-    width:40px;
-    height:90px;
-    background:silver;
-    border-radius:5px;
-    transform:rotate(-45deg);
-    transition:1s;
+position:absolute;
+top:-40px;
+left:90px;
+width:40px;
+height:90px;
+background:silver;
+border-radius:5px;
+transform:rotate(-45deg);
+transition:1s;
 }
 
 #finalMessage{
-    font-size:30px;
-    margin-top:30px;
-}
-
-/* SNOW */
-.snowflake{
-    position:fixed;
-    top:-10px;
-    font-size:16px;
-    pointer-events:none;
-    animation:fall linear infinite;
-}
-@keyframes fall{
-    to{transform:translateY(110vh);}
+font-size:30px;
+margin-top:30px;
+animation:glow 2s infinite alternate;
 }
 
 /* BALLOONS */
 .balloon{
-    position:fixed;
-    bottom:-100px;
-    font-size:60px;
-    animation:floatUp 12s linear infinite;
+position:fixed;bottom:-150px;font-size:100px;
+animation:floatUp 14s linear infinite;
 }
 @keyframes floatUp{
-    from{transform:translateY(0);}
-    to{transform:translateY(-130vh);}
+from{transform:translateY(0);}
+to{transform:translateY(-130vh);}
 }
 
-/* PARTICLES */
-.particle{
-    position:fixed;
-    pointer-events:none;
+/* BUTTERFLIES */
+.butterfly{
+position:fixed;font-size:35px;
+animation:flutter 2s infinite alternate;
+}
+@keyframes flutter{
+0%{transform:rotate(0deg);}
+50%{transform:rotate(15deg);}
+100%{transform:rotate(-15deg);}
 }
 
-/* MOUSE TRAIL */
-.trail{
-    position:fixed;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:white;
-    pointer-events:none;
-}
+.particle{position:fixed;pointer-events:none;}
 </style>
 </head>
 <body>
 
-<!-- MUSIC -->
 <audio id="bgMusic" loop preload="auto">
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9baf46.mp3?filename=happy-birthday-to-you-piano-version-114089.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9baf46.mp3?filename=happy-birthday-to-you-piano-version-114089.mp3" type="audio/mpeg">
 </audio>
 
-
 <nav>
-    <div>👑 Queen Anisha 👑</div>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#story">Story</a></li>
-        <li><a href="#wishes">Wishes</a></li>
-        <li><a href="#celebrate">Celebrate</a></li>
-    </ul>
-    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+<div>👑 Queen Anisha 👑</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#story">Story</a></li>
+<li><a href="#wishes">Wishes</a></li>
+<li><a href="#celebrate">Celebrate</a></li>
+</ul>
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
 </nav>
 
 <section id="home" class="section home">
-    <h1 class="big-title">🎉 HAPPY BIRTHDAY ANISHA 🎉</h1>
-    <p id="typingText"></p>
-    <button class="btn" onclick="scrollToSection('story')">Begin Journey 🚀</button>
+<h1 class="big-title">🎉 HAPPY BIRTHDAY ANISHA 🎉</h1>
+<p id="typingText"></p>
 </section>
 
 <section id="story" class="section story">
-    <h1 class="big-title">Anisha's Journey 🌟</h1>
+<h1 class="big-title">Anisha's Journey 🌟</h1>
 </section>
 
 <section id="wishes" class="section wishes">
-    <h1 class="big-title">Blessings For Anisha 💕</h1>
-    <div id="wishOutput">Click below 🎁</div>
-    <button class="btn" onclick="generateWish()">Reveal Wish</button>
-</section>
+<h1 class="big-title">Blessings For Anisha 💕</h1>
+<div id="wishOutput">Click below 🎁</div>
+<button class="btn" onclick="generateWish()">Reveal Wish</button>
 
+<div class="gift-box" id="giftBox" onclick="openGift()">
+<div class="gift-lid" id="giftLid"></div>
+<div class="gift-body"></div>
+<div class="letter" id="letter">
+🎉 Happy Birthday Anisha Ma'am 🎉
+</div>
+</div>
+</section>
 <section id="celebrate" class="section celebrate">
-    <h1 class="big-title">🎂 Cake Cutting Time 🎂</h1>
+<h1 class="big-title">🎂 Cake Cutting Time 🎂</h1>
 
-    <div class="cake-container" onclick="cutCake()">
-        <div class="cake-base"></div>
-        <div class="cake-top"></div>
-        <div class="slice" id="slice"></div>
-        <div class="knife" id="knife"></div>
-    </div>
+<div class="cake-container" onclick="cutCake()">
+<div class="cake-base"></div>
+<div class="cake-top"></div>
+<div class="slice" id="slice"></div>
+<div class="knife" id="knife"></div>
+</div>
 
-    <div id="finalMessage"></div>
+<div id="finalMessage"></div>
 </section>
+
 
 <script>
-
-/* Smooth Scroll */
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
 
 /* Typing */
 let text="Anisha, today is your magical day ✨";
@@ -258,8 +284,7 @@ if(i<text.length){
 document.getElementById("typingText").innerHTML+=text.charAt(i);
 i++;
 setTimeout(type,50);
-}
-}
+}}
 type();
 
 /* Wishes */
@@ -269,18 +294,23 @@ let wishes=[
 "Anisha, dreams come true 🌟",
 "Anisha, success is yours 🚀"
 ];
+
 function generateWish(){
 let wish=wishes[Math.floor(Math.random()*wishes.length)];
-document.getElementById("wishOutput").innerHTML=wish;
+document.getElementById("wishOutput").innerHTML=wish+" 🎁";
+document.getElementById("giftBox").style.display="block";
 }
 
-/* REAL CAKE CUT */
+/* Cake Cutting */
 function cutCake(){
 document.getElementById("slice").style.transform="scaleY(1)";
-document.getElementById("knife").style.transform="rotate(0deg) translateY(100px)";
-document.getElementById("finalMessage").innerHTML="🎉 ANISHA CUT THE CAKE 🎉";
+document.getElementById("knife").style.transform=
+"rotate(0deg) translateY(100px)";
+document.getElementById("finalMessage").innerHTML=
+"🎉 Anisha Cut The Cake 🎉";
 
-for(let i=0;i<200;i++){
+/* Sparkle effect */
+for(let i=0;i<80;i++){
 let spark=document.createElement("div");
 spark.innerHTML="✨";
 spark.className="particle";
@@ -291,6 +321,32 @@ setTimeout(()=>spark.remove(),2000);
 }
 }
 
+
+/* Open Gift */
+function openGift(){
+document.getElementById("giftLid").style.transform=
+"translateY(-70px) rotate(-25deg)";
+document.getElementById("letter").style.transform=
+"translateY(-120px) scale(1)";
+
+/* Butterflies */
+for(let i=0;i<20;i++){
+let b=document.createElement("div");
+b.innerHTML="🦋";
+b.className="butterfly";
+b.style.left=Math.random()*window.innerWidth+"px";
+b.style.top=Math.random()*window.innerHeight+"px";
+document.body.appendChild(b);
+
+let move=setInterval(()=>{
+b.style.top=(parseInt(b.style.top)-4)+"px";
+b.style.left=(parseInt(b.style.left)+(Math.random()*8-4))+"px";
+},100);
+
+setTimeout(()=>{clearInterval(move);b.remove();},6000);
+}
+}
+
 /* Balloons */
 setInterval(()=>{
 let balloon=document.createElement("div");
@@ -298,64 +354,18 @@ balloon.innerHTML="🎈";
 balloon.className="balloon";
 balloon.style.left=Math.random()*100+"vw";
 document.body.appendChild(balloon);
-setTimeout(()=>balloon.remove(),12000);
+setTimeout(()=>balloon.remove(),14000);
 },2000);
 
-/* Snow */
-setInterval(()=>{
-let snow=document.createElement("div");
-snow.innerHTML="❄";
-snow.className="snowflake";
-snow.style.left=Math.random()*100+"vw";
-snow.style.animationDuration=(Math.random()*3+2)+"s";
-document.body.appendChild(snow);
-setTimeout(()=>snow.remove(),5000);
-},200);
-
-/* MUSIC FIX */
-let music = document.getElementById("bgMusic");
-let musicBtn = document.querySelector(".music-btn");
-let isPlaying = false;
-
-/* Start Music Function */
-function startMusic(){
-    music.play().then(()=>{
-        isPlaying = true;
-        musicBtn.innerHTML = "🔊";
-    }).catch((error)=>{
-        console.log("Autoplay blocked");
-    });
-}
-
-/* Toggle Button */
+/* Music */
+let music=document.getElementById("bgMusic");
+let btn=document.querySelector(".music-btn");
+let playing=false;
 function toggleMusic(){
-    if(isPlaying){
-        music.pause();
-        isPlaying = false;
-        musicBtn.innerHTML = "🎵";
-    } else {
-        startMusic();
-    }
+if(playing){music.pause();btn.innerHTML="🎵";}
+else{music.play();btn.innerHTML="🔊";}
+playing=!playing;
 }
-
-/* Start music on first user interaction */
-document.addEventListener("click", function(){
-    if(!isPlaying){
-        startMusic();
-    }
-}, { once:true });
-
-
-/* Mouse Trail */
-document.addEventListener("mousemove",function(e){
-let trail=document.createElement("div");
-trail.className="trail";
-trail.style.left=e.pageX+"px";
-trail.style.top=e.pageY+"px";
-document.body.appendChild(trail);
-setTimeout(()=>trail.remove(),400);
-});
-
 </script>
 
 </body>
